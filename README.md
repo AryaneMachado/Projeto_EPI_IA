@@ -40,7 +40,7 @@ O modelo foi treinado para reconhecer as seguintes classes:
 | `fundo_imagens` | Imagens de fundo, ambiente ou conteúdo irrelevante |
 
 
-### 🛠️ Tecnologias utilizadas
+### 🛠️ Tecnologias Utilizadas
 
 - **HTML5**
 - **CSS3**
@@ -50,7 +50,7 @@ O modelo foi treinado para reconhecer as seguintes classes:
 - **p5.js**
 
 
-### 📂 Estrutura do projeto
+### 📂 Estrutura do Projeto
 
 ```bash
 projeto-epi/
