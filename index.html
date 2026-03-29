@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Verificação de EPI (IA)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Sistema de Verificação de EPI (IA)</h1>
+    <p class="subtitle">Monitoramento em tempo real para Segurança do Trabalho</p>
+
+    <!-- BOTÕES DE MODO -->
+    <div class="mode-buttons">
+      <button id="btn-webcam" class="mode-btn active">📷 Usar Webcam</button>
+      <button id="btn-upload" class="mode-btn">🖼️ Enviar Imagem</button>
+    </div>
+
+    <!-- ÁREA DA WEBCAM -->
+    <div id="webcam-section" class="section-box">
+      <h3>Modo Webcam</h3>
+      <div id="canvas-holder"></div>
+    </div>
+
+    <!-- ÁREA DO UPLOAD -->
+    <div id="upload-section" class="section-box hidden">
+      <h3>Modo Upload de Imagem</h3>
+      <input type="file" id="image-upload" accept="image/*">
+
+      <div class="preview-box">
+        <img id="preview-image" src="" alt="Pré-visualização da imagem">
+        <p id="preview-placeholder">Nenhuma imagem selecionada</p>
+      </div>
+
+      <button id="analyze-btn" disabled>Analisar Imagem</button>
+    </div>
+
+    <!-- RESULTADO -->
+    <div id="status-div" class="status-box neutro">
+      <p id="label-text">Carregando modelo...</p>
+      <h2 id="final-result">-</h2>
+      <p id="confidence-text">Confiança: -</p>
+    </div>
+  </div>
+
+  <!-- BIBLIOTECAS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <!-- SEU JS -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

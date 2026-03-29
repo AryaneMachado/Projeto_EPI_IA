@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    color: #1f2d3d;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.3rem;
+    color: #1f3c5b;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    background: #dbe4ee;
+    color: #1f3c5b;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.mode-btn:hover {
+    transform: translateY(-2px);
+}
+
+.mode-btn.active {
+    background: #1f3c5b;
+    color: white;
+}
+
+.section-box {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.section-box h3 {
+    margin-bottom: 15px;
+    color: #1f3c5b;
+}
+
+#canvas-holder canvas {
+    border-radius: 15px;
+    width: 100% !important;
+    max-width: 640px;
+    height: auto !important;
+    border: 4px solid #e6edf5;
+}
+
+.hidden {
+    display: none;
+}
+
+#image-upload {
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.preview-box {
+    width: 100%;
+    max-width: 500px;
+    min-height: 280px;
+    margin: 0 auto 20px auto;
+    border: 2px dashed #c3ced9;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+}
+
+#preview-image {
+    max-width: 100%;
+    max-height: 400px;
+    display: none;
+    border-radius: 12px;
+}
+
+#preview-placeholder {
+    color: #7a8693;
+    font-size: 1rem;
+}
+
+#analyze-btn {
+    background: #1f3c5b;
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+#analyze-btn:disabled {
+    background: #9aa8b6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status-box {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 18px;
+    padding: 25px 20px;
+    color: white;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.status-box p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.status-box h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.seguro {
+    background: linear-gradient(135deg, #2e8b57, #3cb371);
+}
+
+.alerta {
+    background: linear-gradient(135deg, #f39c12, #ffb347);
+}
+
+.perigo {
+    background: linear-gradient(135deg, #b22222, #e63946);
+}
+
+.neutro {
+    background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+}
+
+#confidence-text {
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .mode-btn {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .status-box h2 {
+        font-size: 1.6rem;
+    }
+}
