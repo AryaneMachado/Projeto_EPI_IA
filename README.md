@@ -51,7 +51,6 @@ O modelo foi treinado para reconhecer as seguintes classes:
 
 
 ### 📂 Estrutura do Projeto
-
 ```bash
 projeto-epi/
 │
