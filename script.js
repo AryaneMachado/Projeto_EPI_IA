@@ -6,7 +6,7 @@ let imageUpload, previewImage, previewPlaceholder, analyzeBtn;
 let btnWebcam, btnUpload, webcamSection, uploadSection;
 
 let isModelReady = false;
-let currentMode = "webcam"; // "webcam" ou "upload"
+let currentMode = "webcam"; // "câmera" ou "upload"
 let uploadedImage = null;
 
 async function setup() {
@@ -17,7 +17,7 @@ async function setup() {
     webcam.size(640, 480);
     webcam.hide();
 
-    // Elementos da interface
+    // Interface
     statusDiv = document.getElementById("status-div");
     resultH2 = document.getElementById("final-result");
     labelContainer = document.getElementById("label-text");
@@ -77,9 +77,8 @@ function draw() {
     }
 }
 
-// =========================
-// TROCA DE MODOS
-// =========================
+// Alternância Modos
+
 function activateWebcamMode() {
     currentMode = "webcam";
 
@@ -104,9 +103,8 @@ function activateUploadMode() {
     resetResult("🖼️ Modo imagem ativa. Selecione uma imagem.");
 }
 
-// =========================
-// UPLOAD DE IMAGEM
-// =========================
+// Upload
+
 function handleImageUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -142,9 +140,8 @@ async function analyzeUploadedImage() {
     }
 }
 
-// =========================
-// WEBCAM EM TEMPO REAL
-// =========================
+// Câmera (Tempo Real)
+
 async function predictWebcam() {
     if (!isModelReady || !model || !webcam) {
         window.requestAnimationFrame(predictWebcam);
@@ -163,9 +160,8 @@ async function predictWebcam() {
     window.requestAnimationFrame(predictWebcam);
 }
 
-// =========================
-// PROCESSAMENTO DO RESULTADO
-// =========================
+// Processamento Resultado
+
 function processPrediction(prediction) {
     let highestProb = 0;
     let bestClass = "";
@@ -189,10 +185,10 @@ function processPrediction(prediction) {
             labelContainer.innerText = "SITUAÇÃO: SEGURO";
         } else if (bestClass === "epi_incompleto") {
             statusDiv.className = "status-box alerta";
-            labelContainer.innerText = "SITUAÇÃO: EPI INCOMPLETO";
+            labelContainer.innerText = "SITUAÇÃO: ALERTA";
         } else if (bestClass === "sem_epi") {
             statusDiv.className = "status-box perigo";
-            labelContainer.innerText = "SITUAÇÃO: SEM EPI";
+            labelContainer.innerText = "SITUAÇÃO: PERIGO";
         } else if (bestClass === "fundo_imagens") {
             statusDiv.className = "status-box neutro";
             labelContainer.innerText = "SEM DETECÇÃO RELEVANTE";
@@ -208,9 +204,8 @@ function processPrediction(prediction) {
     }
 }
 
-// =========================
-// RESET DE RESULTADO
-// =========================
+// Reset Resultado - Volta estad. inicial 
+
 function resetResult(message) {
     statusDiv.className = "status-box neutro";
     labelContainer.innerText = message;

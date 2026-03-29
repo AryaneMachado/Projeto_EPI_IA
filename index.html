@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Verificação de EPI (IA)</title>
+  <title>Sistema de Verificação com IA | Uso EPI</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:,">
 </head>
@@ -12,22 +12,22 @@
 <body>
 
   <div class="container">
-    <h1>Sistema de Verificação de EPI (IA)</h1>
-    <p class="subtitle">Monitoramento em tempo real para Segurança do Trabalho</p>
+    <h1>Sistema de Verificação de EPI com IA</h1>
+    <p class="subtitle">Monitoramento sobre o uso de EPIs</p>
 
-    <!-- BOTÕES DE MODO -->
+    <!--Opções -->
     <div class="mode-buttons">
-      <button id="btn-webcam" class="mode-btn active">📷 Usar Webcam</button>
+      <button id="btn-webcam" class="mode-btn active">📷 Usar Câmera</button>
       <button id="btn-upload" class="mode-btn">🖼️ Enviar Imagem</button>
     </div>
 
-    <!-- ÁREA DA WEBCAM -->
+    <!-- Câmera -->
     <div id="webcam-section" class="section-box">
-      <h3>Modo Webcam</h3>
+      <h3>Modo Câmera (Tempo Real)</h3>
       <div id="canvas-holder"></div>
     </div>
 
-    <!-- ÁREA DO UPLOAD -->
+    <!-- Upload -->
     <div id="upload-section" class="section-box hidden">
       <h3>Modo Upload de Imagem</h3>
       <input type="file" id="image-upload" accept="image/*">
@@ -40,7 +40,7 @@
       <button id="analyze-btn" disabled>Analisar Imagem</button>
     </div>
 
-    <!-- RESULTADO -->
+    <!-- Resultado -->
     <div id="status-div" class="status-box neutro">
       <p id="label-text">Carregando modelo...</p>
       <h2 id="final-result">-</h2>
@@ -48,12 +48,12 @@
     </div>
   </div>
 
-  <!-- BIBLIOTECAS -->
+  <!-- Libs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
-  <!-- SEU JS -->
+  <!-- Js -->
   <script src="script.js"></script>
 
 </body>
